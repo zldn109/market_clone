@@ -6,6 +6,7 @@ footer {
   /* vw = viewwidth -> 즉 100vw는 보여지는 너비의 100%를 채우기 */
   border-top: 1px solid #eaeaea;
   background-color: white;
+  /* 백그라운드 컬러 화이트로 주기(안주면 투명색) */
 }
 
 .footer-block {
@@ -30,8 +31,28 @@ footer {
   cursor: pointer;
   /* 아이콘 위에 커서 올리면 커서 모양이 바뀜 */
 }
+
+@keyframes icons-move-up {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 .footer-icons__img {
   width: 30px;
   margin-bottom: 5px;
   /* 이미지랑 텍스트 사이 공간 주기 */
+}
+
+.footer-icons__img:hover {
+  animation: 1s icons-move-up;
 }
