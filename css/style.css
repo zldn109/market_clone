@@ -4,6 +4,12 @@
 @import "main.css";
 /* import로 나머지 css를 연결시켜주면 html에 style.css만 link로 연결해도 됨 */
 
+:root {
+  --button-primary: rgb(254, 111, 15);
+  --button-hover: rgb(254, 111, 15, 0.8);
+}
+/* 색깔버튼 선언해서 사용하기 */
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
     "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI",
