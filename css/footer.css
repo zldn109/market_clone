@@ -1,0 +1,37 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  /* footer는 스크롤이 내려지던 아니던 맨 아래에 붙어있게 해야함 */
+  width: 100vw;
+  /* vw = viewwidth -> 즉 100vw는 보여지는 너비의 100%를 채우기 */
+  border-top: 1px solid #eaeaea;
+  background-color: white;
+}
+
+.footer-block {
+  display: flex;
+  justify-content: space-evenly;
+  /* 화면이 넓어져도 반응형으로 움직임 */
+  align-items: center;
+  padding: 10px 0 25px 0;
+  /* 픗터블럭 자체에 위아래로 패딩 넣어주기 */
+}
+
+.footer-icons {
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  /* displat: flex때매 아이콘이랑 텍스트가 모두 가로정렬되니까 column으로 세로정렬로 바꾸기 */
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 0 20px;
+  /* 아이콘클래스 사이에 공간주기(양옆으로) */
+  cursor: pointer;
+  /* 아이콘 위에 커서 올리면 커서 모양이 바뀜 */
+}
+.footer-icons__img {
+  width: 30px;
+  margin-bottom: 5px;
+  /* 이미지랑 텍스트 사이 공간 주기 */
+}

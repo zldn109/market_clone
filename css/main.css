@@ -1,0 +1,54 @@
+main {
+  padding: 20px 10px 70px 10px;
+}
+
+.item-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ededef;
+}
+
+.item-list__img {
+  width: 130px;
+  height: 130px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* rgba => a 는 투명도 -> 즉 투명도가 0.1인 블랙*/
+  border-radius: 12px;
+  margin-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.item-list__info {
+  width: 200px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.item-list__info div {
+  margin-top: 10px;
+}
+
+.item-list__info-meta {
+  font-size: smaller;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.item-list__info-price {
+  font-weight: bold;
+}
+
+.write-button {
+  position: fixed;
+  bottom: 100px;
+  right: 15px;
+  background-color: #fe6f0f;
+  color: white;
+  padding: 15px 18px 15px 18px;
+  border-radius: 25px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
