@@ -51,4 +51,9 @@ main {
   padding: 15px 18px 15px 18px;
   border-radius: 25px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.write-button:hover {
+  background-color: rgb(254, 111, 15, 0.8);
 }
