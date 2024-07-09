@@ -32,6 +32,7 @@ footer {
   /* 아이콘 위에 커서 올리면 커서 모양이 바뀜 */
 }
 
+/* 아이콘에 애니메이션 주기 */
 @keyframes icons-move-up {
   0% {
     transform: translateY(0);
@@ -53,6 +54,7 @@ footer {
   /* 이미지랑 텍스트 사이 공간 주기 */
 }
 
-.footer-icons__img:hover {
+.footer-icons:hover footer-icons__img {
   animation: 1s icons-move-up;
 }
+/* 아이콘 블럭에 마우스 올렸을때 아이콘이미지가 애니메이션 수행   */
