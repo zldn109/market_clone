@@ -8,9 +8,28 @@ import sqlite3
 con = sqlite3.connect('db.db', check_same_thread=False)
 cur = con.cursor()
 
+# cur.execute(f"""
+#             CREATE TABLE IF NOT EXISTS items (
+#                 id INTEGER PRIMARY KEY,
+# 	            title TEXT NOT NULL,
+# 	            image BLOB,
+# 	            price INTEGER NOT NULL,
+# 	            description TEXT, 
+# 	            place TEXT NO NULL,
+# 	            insertAt INTEGER NOT NULL
+#             );
+#             """)
+
+# cur.execute(f"""
+#            CREATE TABLE IF NOT EXISTS users (
+#                 id TEXT PRIMARY KEY,
+#                 name TEXT NOT NULL,
+# 	            email TEXT NOT NULL,
+# 	            password TEXT NOT NULL
+#             );
+#             """)
+
 app = FastAPI()
-
-
 
 @app.post("/items")
 async def create_item(
@@ -53,5 +72,17 @@ async def get_image(item_id: int):
                           SELECT image FROM items WHERE id={item_id}
                           """).fetchone()[0]
     return Response(content=bytes.fromhex(image_bytes),media_type="image/*")
+
+@app.post("/signup") # 프론트엔드에서 폼을 통해서 post로 보냄(회원가입을 시켜달라고 요청을 보내는거니까)
+def signup(id:Annotated[str,Form()],
+           password:Annotated[str,Form()],
+           name:Annotated[str,Form()],
+           email:Annotated[str,Form()]):
+    cur.execute(f"""
+                INSERT INTO users(id,name,email,password)
+                VALUES ('{id}','{name}','{email}','{password}')
+                """)
+    con.commit()
+    return "200"
 
 app.mount("/", StaticFiles(directory="frontend", html = True), name="static")
